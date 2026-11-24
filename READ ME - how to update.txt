@@ -1,0 +1,35 @@
+HOW TO PUT THIS UPDATE ON GITHUB  (Sidereal Enochian Chart, repository geradsmith81-dev/Enochian)
+==============================================================================================
+
+Why: the online app (enochian.streamlit.app) still runs the files from 19 November, so it has no
+automatic elevation and is missing some newer files. This folder holds only the 13 files that changed
+or are missing. They must go up together: the new app.py needs the new desktop.py.
+
+1. Unzip this zip: right-click it, "Extract All...", "Extract".
+   Open the folder "Enochian update" inside.
+
+2. Go to https://github.com/geradsmith81-dev/Enochian (signed in).
+   Click "Add file" > "Upload files".
+
+3. In File Explorer, first turn on hidden files: View > Show > Hidden items.
+   Press Ctrl+A in the "Enochian update" folder (select EVERYTHING inside it, not the folder
+   itself) and drag it into the GitHub page. Wait until every file is listed, then click
+   the green "Commit changes" button.
+
+4. Check that the repository now shows a ".streamlit" folder. GitHub's web upload often drops
+   folders whose names start with a dot. If it is missing:
+   - click "Add file" > "Create new file";
+   - type the name   .streamlit/config.toml   (the slash makes the folder);
+   - open "config.toml for GitHub (paste).txt" from this folder in Notepad, copy everything,
+     paste it into the big box, and click "Commit changes".
+   (Do the same for ".gitignore" if it is missing; that one is optional.)
+
+5. Restart the online app: go to https://share.streamlit.io, find the Enochian app, click the
+   three dots (...) > "Reboot app". The first start after this update takes a few minutes, because
+   Streamlit installs the components again.
+
+6. On your phone, open the app, Edit profile > "Use my location": the box "Ground elevation where
+   you live" should now fill itself in (464 m for the position in your screenshot,
+   61.0656°, -149.7238°; a slightly different spot gives a slightly different height), with the line "Ground height read for this spot from open elevation data".
+
+Files in this update: .gitignore, .streamlit/config.toml, DEPLOY GUIDE.txt, HOW_IT_WORKS.md, README.md, app.py, calendar_pages.py, config.toml for GitHub (paste).txt, desktop.py, places.py, requirements.in, requirements.txt, user_profile.py
