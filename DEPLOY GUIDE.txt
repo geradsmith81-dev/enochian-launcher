@@ -1,0 +1,105 @@
+PUTTING THE SIDEREAL ENOCHIAN CHART ONLINE  (GitHub + Streamlit Community Cloud)
+================================================================================
+
+No programming and no command line are needed: everything happens in your web browser.
+You need two free accounts: GitHub (github.com) and Streamlit Community Cloud
+(share.streamlit.io; sign in there with your GitHub account).
+
+You have two zips:
+  SiderealEnochianApp_github.zip       - the app itself (sections A to C)
+  SiderealEnochian_launcher.zip        - the phone launcher page (section D, optional)
+
+
+A. FIRST TIME ONLY: create the repository and upload the app files
+-------------------------------------------------------------------
+1. Unzip: right-click "SiderealEnochianApp_github.zip", choose "Extract All...",
+   then "Extract". A folder opens containing app.py and the other files.
+2. Go to github.com and sign in. Click the "+" at the top right, then "New repository".
+   - Repository name: sidereal-enochian-chart (any name will do)
+   - Choose "Private". This is recommended because the tables come from in-copyright books.
+   - Leave the other options unticked. Click "Create repository".
+3. On the new, empty repository page, click the link "uploading an existing file".
+4. In the extracted folder, press Ctrl+A to select EVERYTHING INSIDE it, then drag
+   the selection into the browser window.
+   - Drag the CONTENTS, not the folder itself, so that app.py sits at the top level.
+   - Dragging (rather than "choose your files") is what brings the ".streamlit" and
+     "assets" sub-folders along (assets now holds a "fonts" folder too).
+   - Files whose names start with a dot (.gitignore, .streamlit) may be hidden in
+     Windows. To show them: in File Explorer choose View > Show > Hidden items.
+5. Wait until every file is listed, then click the green "Commit changes" button.
+   Check afterwards that the repository shows the ".streamlit" folder; if GitHub
+   dropped it, upload ".streamlit\config.toml" again with "Add file" > "Upload files".
+
+B. FIRST TIME ONLY: start the app on Streamlit
+----------------------------------------------
+1. Go to share.streamlit.io and sign in with GitHub. If it asks for permission to
+   see your private repositories, allow it.
+2. Click "Create app", then "Yup, I have an app" (deploy from GitHub).
+3. Fill in:   Repository = your new repository
+              Branch     = main
+              Main file path = app.py
+   Under "App URL" choose a short address, e.g. sidereal-enochian. Click "Deploy".
+4. The first start takes a few minutes: Streamlit installs the components and the app
+   downloads the NASA planetary file (about 32 MB). After that it opens quickly.
+5. To let other people see it, open the app's "Settings" > "Sharing" and make it public.
+   The repository itself stays private.
+6. Copy the app's address (it ends in .streamlit.app/). The launcher (section D) needs it.
+
+
+C. EVERY LATER UPDATE (each time you get a new SiderealEnochianApp_github.zip)
+------------------------------------------------------------------------------
+1. Unzip the new zip as in A1.
+2. On your GitHub repository page click "Add file" > "Upload files".
+3. Select everything inside the extracted folder (Ctrl+A) and drag it in. Files with
+   the same names are replaced.
+4. Click "Commit changes". Streamlit notices the change and restarts the app by
+   itself within a minute or two (if not: share.streamlit.io > your app > "Reboot app").
+   LIGHT MODE: the file ".streamlit/config.toml" keeps the app dark even when a tablet,
+   phone or browser is in light mode. If your repository does not show a ".streamlit"
+   folder after uploading (GitHub's web upload sometimes drops it), make it by hand:
+   "Add file" > "Create new file", type the name  .streamlit/config.toml  (the slash
+   makes the folder), open "config.toml for GitHub (paste).txt" from the zip in Notepad,
+   copy everything into the big box, and click "Commit changes". (The app also forces
+   its dark colours by itself, so the text stays readable even without this file.)
+   An earlier update added new files (calendar_pages.py, ritual_calendar.py, workings.py,
+   enochian_script.py, HOW_IT_WORKS.md, LICENSE, assets\fonts\...): dragging
+   everything in, as above, uploads them too. Nothing needs deleting.
+   The November 2026 security update adds desktop.py and requirements.in, and
+   replaces requirements.txt with a list of exact versions and checksums. Drag
+   everything in as usual.
+
+
+D. THE PHONE LAUNCHER (optional, once)
+--------------------------------------
+The launcher is a small public web page. Added to a phone's home screen, it opens the
+app straight from an icon (a glowing seven-pointed star over the aurora), like the
+launchers of Sky Gahshomar and the other Sky apps.
+1. Unzip "SiderealEnochian_launcher.zip".
+2. On github.com make a NEW repository named sidereal-enochian-launcher, choose
+   "Public" (it holds no Enochian tables), and click "Create repository".
+3. Click "uploading an existing file" and drag in everything from the launcher folder,
+   including the "icons" folder. Click "Commit changes".
+4. Settings > Pages: Source = "Deploy from a branch", Branch = main, folder = / (root).
+   Click "Save". After a minute or two GitHub shows the address, e.g.
+   https://geradsmith81-dev.github.io/sidereal-enochian-launcher/
+5. Put in the app's address: open index.html in the repository, click the pencil, and
+   change  var APP_URL = "REPLACE-WITH-STREAMLIT-APP-URL";  to your address from B6,
+   e.g.  var APP_URL = "https://sidereal-enochian.streamlit.app/";  then "Commit changes".
+   Also open sw.js and change sidereal-enochian-launcher-v1 to ...-v2, and commit.
+   (Or send the address to the assistant, who can make a launcher zip with it filled in.)
+6. On the phone, open the launcher address and add it to the home screen
+   (iPhone: Share > Add to Home Screen; Android: three dots > Add to home screen).
+Full steps are in the launcher's README.md.
+
+
+NOTES
+-----
+- On the website your profile (name, picture, birth details) is kept only while the
+  browser tab is open; it is not saved on the server. The desktop app on your own
+  computer keeps it in %LOCALAPPDATA%\SiderealEnochianChart\profile, outside the app
+  folder, so it is never uploaded.
+- The NASA file "de440s.bsp" is deliberately not in the zip: it is larger than GitHub's
+  25 MB upload limit, and the app downloads it by itself.
+- The "Workings" links open esotericarchives.com, so they need the internet.
+- If the online app shows an error, click "Manage app" (bottom right) to see the log,
+  or use "Reboot app" from the menu on share.streamlit.io.

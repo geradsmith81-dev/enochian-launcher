@@ -1,0 +1,8 @@
+skyfield==1.55
+numpy==2.5.4
+pandas==3.1.0
+matplotlib==3.11.2
+streamlit==1.66.1
+geonamescache==3.0.2
+tzdata==2026.6
+pillow==13.0.0

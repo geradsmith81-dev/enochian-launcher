@@ -1,0 +1,43 @@
+[server]
+maxUploadSize = 15
+fileWatcherType = "none"
+runOnSave = false
+headless = true
+
+[browser]
+gatherUsageStats = false
+
+[client]
+toolbarMode = "minimal"
+
+# The app is always dark (aurora over snow and spruce). The same colours are given for the light slot, so that a
+# browser, tablet or phone in light mode, or Light chosen in Streamlit's menu, still shows the dark theme.
+# theme.FORCE_CSS sets the same colours as well, in case this file is missing on GitHub.
+[theme]
+base = "dark"
+primaryColor = "#bde188"
+backgroundColor = "#1c1b21"
+secondaryBackgroundColor = "#26252c"
+textColor = "#ece3e6"
+linkColor = "#bde188"
+font = "sans serif"
+
+[theme.dark]
+primaryColor = "#bde188"
+backgroundColor = "#1c1b21"
+secondaryBackgroundColor = "#26252c"
+textColor = "#ece3e6"
+linkColor = "#bde188"
+
+[theme.light]
+primaryColor = "#bde188"
+backgroundColor = "#1c1b21"
+secondaryBackgroundColor = "#26252c"
+textColor = "#ece3e6"
+linkColor = "#bde188"
+codeBackgroundColor = "#2b2a31"
+codeTextColor = "#e7fd9b"
+borderColor = "rgba(135, 149, 116, 0.45)"
+dataframeBorderColor = "rgba(135, 149, 116, 0.45)"
+dataframeHeaderBackgroundColor = "#26252c"
+dataframeHeaderTextColor = "#e7fd9b"
